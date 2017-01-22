@@ -18,13 +18,26 @@ public class PlayerController : MonoBehaviour {
 	public Tilt tilt;
 	public Boundary boundary;
 
+	public GameObject shot;
+	public Transform shotSpawn;
+
+	public float fireDelta;
+	private float nextFire = 0.0F;
+
 	private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 	}
-	
+
+	void Update(){
+		if (Input.GetButton("Fire1") && Time.time > nextFire) {
+			nextFire = Time.time + fireDelta;
+			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
+		}
+	}
+
 	void FixedUpdate() {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVetical = Input.GetAxis ("Vertical");
@@ -43,5 +56,4 @@ public class PlayerController : MonoBehaviour {
 			0.0f,
 			rb.velocity.x * -tilt.horizontal);
 	}
-
 }
