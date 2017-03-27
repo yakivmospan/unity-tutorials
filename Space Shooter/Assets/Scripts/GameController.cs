@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
 	
 	public float startWait;
 
-	public GameObject hazard;
+	public GameObject[] hazards;
 	public int hazardCount;
 
 	public Vector3 spawnTransform;
@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour {
 		while (true) {
 			yield return new WaitForSeconds(startWait);
 			for (int i = 0; i < hazardCount; i++) {
+				GameObject hazard = hazards [Random.Range(0, hazards.Length)];
 				Instantiate (
 					hazard,
 					new Vector3 (Random.Range (-spawnTransform.x, spawnTransform.x), spawnTransform.y, spawnTransform.z), 
