@@ -25,7 +25,7 @@ public class DestroyByContact : MonoBehaviour {
 		if(!other.CompareTag("Boundary") && !other.CompareTag("Enemy")){
 			Destroy(other.gameObject);
 			Destroy(gameObject);
-//			gameController.AddScore (scoreValue);
+			gameController.AddScore (scoreValue);
 
 			if (other.tag == "Player") {
 				Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
