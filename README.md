@@ -5,4 +5,4 @@ The purpose of this repository is to complete and gather all [Unity Turorials](h
 ### Completed Turorials
 
 1. [Roll-a-ball tutorial](https://unity3d.com/learn/tutorials/projects/roll-ball-tutorial) a simple rolling ball game that teaches you many of the principles of working with Unity.
-
+2. [Space Shooter tutorial](https://unity3d.com/learn/tutorials/projects/space-shooter-tutorial) a simple top down arcade style shooter.
